@@ -64,9 +64,11 @@ for (const page of pages) {
   }
   // All outbound Instagram links must point to the athlete's BJJ profile.
   const instagram = tags(html, 'a').map(tag => attribute(tag, 'href')).filter(href => href?.startsWith('https://www.instagram.com/'));
-  if (!instagram.length || instagram.some(href => href !== 'https://www.instagram.com/giuliacasaldibjj/')) {
+  if (!instagram.length || instagram.some(href => href !== 'https://www.instagram.com/giuliacasaldijj/')) {
     fail(file, 'unexpected or missing official BJJ Instagram profile');
   }
+  const displayedHandles = [...html.matchAll(/Instagram\s+@([a-z0-9_.]+)/gi)].map(m => m[1].toLowerCase());
+  if (displayedHandles.some(handle => handle !== 'giuliacasaldijj')) fail(file, 'incorrect visible Instagram handle');
   const structured = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
   if (structured.length !== 1) fail(file, 'expected exactly one JSON-LD block');
   for (const [, json] of structured) {
@@ -74,6 +76,7 @@ for (const page of pages) {
       const person = JSON.parse(json);
       if (person['@type'] !== 'Person' || person.name !== 'Giulia Casaldi') fail(file, 'unexpected JSON-LD athlete identity');
       if (!Array.isArray(person.sameAs) || !person.sameAs.every(url => /^https:\/\//.test(url))) fail(file, 'invalid sameAs URLs');
+      if (!person.sameAs?.includes('https://www.instagram.com/giuliacasaldijj/')) fail(file, 'JSON-LD missing official Instagram identity');
     } catch { fail(file, 'invalid JSON-LD syntax'); }
   }
 }
