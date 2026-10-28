@@ -4,7 +4,7 @@
  * Run from the repository root: node scripts/verify-site.mjs
  */
 import { readFileSync, existsSync } from 'node:fs';
-import { resolve, dirname, join } from 'node:path';
+import { resolve, dirname, join, relative, isAbsolute, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -55,7 +55,13 @@ for (const page of pages) {
     const pathname = target.split(/[?#]/)[0];
     if (!pathname || pathname.startsWith('/')) continue;
     const absolute = resolve(root, dirname(file), pathname);
-    if (!absolute.startsWith(root + '/') && absolute !== root) { fail(file, `path escapes site: ${target}`); continue; }
+    // Path separators differ on Windows and Unix. Use relative() rather than
+    // comparing to root + '/' (which incorrectly rejects every Windows asset).
+    const fromRoot = relative(root, absolute);
+    if (fromRoot === '..' || fromRoot.startsWith('..' + sep) || isAbsolute(fromRoot)) {
+      fail(file, `path escapes site: ${target}`);
+      continue;
+    }
     const resolvedFile = pathname.endsWith('/') ? join(absolute, 'index.html') : absolute;
     if (!existsSync(resolvedFile)) fail(file, `missing local asset/link ${target}`);
   }
