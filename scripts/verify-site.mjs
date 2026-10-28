@@ -36,7 +36,7 @@ for (const page of pages) {
   for (const [code, href] of [['it', base], ['en', base + 'en/'], ['x-default', base]]) {
     if (attribute(headLink(html, 'alternate', code) || '', 'href') !== href) fail(file, `missing or incorrect hreflang=${code}`);
   }
-  const mobileMenu = html.match(/<div\\s+class=["']mobile-panel["']>([\\s\\S]*?)<\\/div>/i)?.[1] || '';
+  const mobileMenu = html.match(/<div\s+class=["']mobile-panel["']>([\s\S]*?)<\/div>/i)?.[1] || '';
   const otherLanguage = lang === 'it' ? 'en/' : '../';
   if (!tags(mobileMenu, 'a').some(t => attribute(t, 'href') === otherLanguage)) {
     fail(file, 'mobile navigation missing language switch');
