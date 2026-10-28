@@ -30,3 +30,13 @@ Questo repository è un sito statico per GitHub Pages. In **Settings → Pages**
 6. Aggiornare annualmente risultati, grado e percorso agonistico.
 
 Nessun titolo mondiale/nazionale viene dichiarato senza prova. Il termine campionessa descrive la vittoria effettivamente documentata nell'assoluto della competizione Roma Jiu Jitsu Challenge 2022.
+
+## Verifica SEO locale (offline)
+
+Prima di pubblicare modifiche a pagine, menu o metadati, eseguire dalla root:
+
+```sh
+node scripts/verify-site.mjs
+```
+
+Il controllo, senza dipendenze né chiamate Internet, verifica per IT/EN: lingua, title e description, canonical, Open Graph URL, hreflang, ID duplicati, link interni e asset locali, alt delle immagini, JSON-LD Person e URL della sitemap. Restituisce codice di uscita 1 in caso di errore. **Non** certifica l'indicizzazione Google, l'accessibilità completa, il contenuto dei risultati agonistici o il funzionamento di link esterni. Non avvia GitHub Actions o deploy.
