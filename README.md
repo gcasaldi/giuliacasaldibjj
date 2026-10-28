@@ -15,6 +15,10 @@ Questo repository è un sito statico per GitHub Pages. In **Settings → Pages**
 
 **Nota:** il file `robots.txt` sotto il sottopercorso GitHub Pages non sostituisce il robots.txt all'origine del dominio. La sitemap è direttamente raggiungibile e può essere inviata a Google Search Console.
 
+## Materiale per stampa e organizzatori
+
+- [Press kit bilingue con biografia breve, piazzamenti e fonti primarie](docs/press-kit.md). Le fotografie non sono incluse finché non siano disponibili originali autorizzati.
+
 ## Fonti risultati
 - UIJJ [Roma Jiu Jitsu Challenge 2022](https://www.uijj.org/it/elenco-gare/roma-jiu-jitsu-challenge-2022)
 - UIJJ [Milano Jiu Jitsu Challenge 2022](https://www.uijj.org/it/elenco-gare/milano-jiu-jitsu-challenge-2022)
