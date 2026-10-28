@@ -62,6 +62,11 @@ for (const page of pages) {
   for (const img of tags(html, 'img')) {
     if (!attribute(img, 'alt')) fail(file, 'image missing nonempty alt text');
   }
+  // All outbound Instagram links must point to the athlete's BJJ profile.
+  const instagram = tags(html, 'a').map(tag => attribute(tag, 'href')).filter(href => href?.startsWith('https://www.instagram.com/'));
+  if (!instagram.length || instagram.some(href => href !== 'https://www.instagram.com/giuliacasaldibjj/')) {
+    fail(file, 'unexpected or missing official BJJ Instagram profile');
+  }
   const structured = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
   if (structured.length !== 1) fail(file, 'expected exactly one JSON-LD block');
   for (const [, json] of structured) {
