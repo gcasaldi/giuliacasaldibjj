@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+<title id="title">Eternal Aegean — original classical Greek-inspired arena landscape</title>
+<desc id="desc">Original atmospheric illustration of an ancient Greek temple above the Aegean sea at sunrise with distant mountains and weathered marble columns, made for a Brazilian Jiu-Jitsu athlete website.</desc>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2=".1" y2="1"><stop stop-color="#0d1828"/><stop offset=".27" stop-color="#37434a"/><stop offset=".55" stop-color="#a97859"/><stop offset=".75" stop-color="#e5af71"/><stop offset="1" stop-color="#273a45"/></linearGradient>
+<radialGradient id="light"><stop stop-color="#fff8d6" stop-opacity=".98"/><stop offset=".21" stop-color="#ffdc9b" stop-opacity=".7"/><stop offset=".52" stop-color="#f4b979" stop-opacity=".25"/><stop offset="1" stop-color="#e3a87c" stop-opacity="0"/></radialGradient>
+<linearGradient id="sea" x1="0" y1="0" x2=".1" y2="1"><stop stop-color="#a78265"/><stop offset=".36" stop-color="#4e646c"/><stop offset="1" stop-color="#0c2533"/></linearGradient>
+<linearGradient id="stone" x1="0" y1="0" x2="1" y2=".75"><stop stop-color="#e9cda3"/><stop offset=".23" stop-color="#a79178"/><stop offset=".58" stop-color="#625f58"/><stop offset="1" stop-color="#272e31"/></linearGradient>
+<linearGradient id="pillar" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#504c47"/><stop offset=".15" stop-color="#ead0a4"/><stop offset=".3" stop-color="#bba585"/><stop offset=".53" stop-color="#e7cda2"/><stop offset=".85" stop-color="#78695c"/><stop offset="1" stop-color="#35393a"/></linearGradient>
+<linearGradient id="floor" x1="0" y1="0" x2=".1" y2="1"><stop stop-color="#655b51"/><stop offset="1" stop-color="#0b131d"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+<filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" seed="5" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".13"/></feComponentTransfer></filter>
+</defs>
+<path d="M0 0h1600v1040H0z" fill="url(#sky)"/>
+<ellipse cx="1110" cy="420" rx="520" ry="510" fill="url(#light)"/>
+<circle cx="1110" cy="415" r="75" fill="#ffdfac" opacity=".78" filter="url(#blur)"/>
+<circle cx="1110" cy="415" r="45" fill="#ffeacc" opacity=".68"/>
+<path d="M0 620 120 570 270 596 406 480 550 550 680 463 835 578 980 517 1120 584 1250 491 1405 549 1600 508V795H0Z" fill="#56616a" opacity=".6"/>
+<path d="M0 656 150 609 360 679 548 581 754 669 915 595 1100 661 1240 593 1430 654 1600 591V798H0Z" fill="#36434d" opacity=".74"/>
+<path d="M0 684h1600v356H0z" fill="url(#sea)"/>
+<path d="M35 737q70-8 150 0t200-3q220 11 360-1t210 0q280 5 620-2M0 784q300-9 510-2t390-6 700-4M0 826q100 9 300 0t400 2q230 7 480-5t420 2" stroke="#e7b684" stroke-width="3" fill="none" opacity=".2"/>
+<path d="M1071 680q42 8 76 0l115 264H898Z" fill="#dab484" opacity=".15"/>
+<path d="M0 777 210 684 520 730 608 691 778 721 823 773 730 1040H0Z" fill="#24343a" opacity=".8"/>
+<!-- ancient temple plinth and hillside -->
+<path d="M855 716 1300 660 1600 691V1040H860Z" fill="#252f32"/>
+<path d="M886 714 1370 690 1544 728 1600 742V786L910 761Z" fill="#695f52" stroke="#aa9073" stroke-width="5"/>
+<path d="M910 758 1600 777v34l-664-15z" fill="#514a42" stroke="#907b65" stroke-width="3"/>
+<path d="M927 794 1600 818v43l-642-21z" fill="#3f423f" stroke="#776e62" stroke-width="3"/>
+<path d="M950 838 1600 868v50l-609-29z" fill="url(#floor)"/>
+<!-- temple entablature and pediment -->
+<path d="M935 306 1266 166 1590 325l-12 45-625-7z" fill="url(#stone)" stroke="#c1a27a" stroke-width="9"/>
+<path d="M1028 319 1266 214 1499 328z" fill="#635e55" stroke="#ddbb89" stroke-width="4"/>
+<path d="M1105 315h326l-164-62z" fill="#bba47f" opacity=".35"/>
+<path d="M965 368h607v41H965z" fill="url(#stone)" stroke="#d7b48a" stroke-width="3"/>
+<path d="M966 409h607v26H966z" fill="#bda581"/>
+<!-- triglyph frieze -->
+<g fill="#645e54" opacity=".8"><path d="M1000 377h25v24h-25zM1067 377h25v24h-25zM1134 377h25v24h-25zM1201 377h25v24h-25zM1268 377h25v24h-25zM1335 377h25v24h-25zM1402 377h25v24h-25zM1469 377h25v24h-25zM1536 377h25v24h-25z"/></g>
+<!-- columns -->
+<g>
+<g transform="translate(1020)"><path d="M-20 437h95v22h-95z" fill="#d5bb92"/><path d="M-8 457h68v260H-8z" fill="url(#pillar)"/><path d="M-8 457v260M7 457v260M26 457v260M44 457v260M60 457v260" stroke="#514c49" stroke-width="3" opacity=".55"/><path d="M-20 710h94v26h-94z" fill="url(#stone)"/></g>
+<g transform="translate(1150)"><path d="M-20 437h95v22h-95z" fill="#d5bb92"/><path d="M-8 457h68v260H-8z" fill="url(#pillar)"/><path d="M-8 457v260M7 457v260M26 457v260M44 457v260M60 457v260" stroke="#514c49" stroke-width="3" opacity=".55"/><path d="M-20 710h94v26h-94z" fill="url(#stone)"/></g>
+<g transform="translate(1280)"><path d="M-20 437h95v22h-95z" fill="#d5bb92"/><path d="M-8 457h68v260H-8z" fill="url(#pillar)"/><path d="M-8 457v260M7 457v260M26 457v260M44 457v260M60 457v260" stroke="#514c49" stroke-width="3" opacity=".55"/><path d="M-20 710h94v26h-94z" fill="url(#stone)"/></g>
+<g transform="translate(1410)"><path d="M-20 437h95v22h-95z" fill="#d5bb92"/><path d="M-8 457h68v260H-8z" fill="url(#pillar)"/><path d="M-8 457v260M7 457v260M26 457v260M44 457v260M60 457v260" stroke="#514c49" stroke-width="3" opacity=".55"/><path d="M-20 710h94v26h-94z" fill="url(#stone)"/></g>
+<g transform="translate(1540)"><path d="M-20 437h95v22h-95z" fill="#d5bb92"/><path d="M-8 457h68v260H-8z" fill="url(#pillar)"/><path d="M-8 457v260M7 457v260M26 457v260M44 457v260M60 457v260" stroke="#514c49" stroke-width="3" opacity=".55"/><path d="M-20 710h94v26h-94z" fill="url(#stone)"/></g>
+</g>
+<!-- olive branches silhouettes foreground -->
+<g stroke="#101e22" fill="#17292b" stroke-width="9" stroke-linecap="round">
+<path d="M1620 800q-170-18-225 230M1516 1040q-56-240-220-290"/>
+<path d="M1538 875q-35-55-79-67 10 48 55 85zM1485 927q-52-22-96-8 30 39 84 43zM1459 980q-57-4-90 23 47 21 89 11zM1568 827q-17-68-61-103 0 64 41 109zM1578 945q-8-64-45-105-9 58 27 108z"/>
+</g>
+<path d="M0 0h1600v1040H0z" fill="#d6ba93" filter="url(#noise)" opacity=".22"/>
+<path d="M0 0h1600v1040H0z" fill="none" stroke="#dcbf9c" stroke-width="4" opacity=".12"/>
+</svg>
