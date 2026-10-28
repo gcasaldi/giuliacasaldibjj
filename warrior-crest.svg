@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750" role="img" aria-labelledby="title desc">
+<title id="title">GC — Brazilian Jiu-Jitsu warrior emblem</title><desc id="desc">Original graphic emblem with stylized jiu-jitsu gi, purple belt, and geometric competition crest. Not a portrait or a photograph.</desc>
+<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe6b8"/><stop offset=".5" stop-color="#d7a664"/><stop offset="1" stop-color="#8a5a32"/></linearGradient><linearGradient id="purple" x1="0" x2="1"><stop stop-color="#382243"/><stop offset=".5" stop-color="#996abc"/><stop offset="1" stop-color="#523267"/></linearGradient><linearGradient id="gi" x1=".2" y1="0" x2=".9" y2="1"><stop stop-color="#25242d"/><stop offset=".5" stop-color="#14141b"/><stop offset="1" stop-color="#090a0d"/></linearGradient><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter></defs>
+<circle cx="300" cy="350" r="224" fill="#6b417c" opacity=".16" filter="url(#glow)"/>
+<path d="M300 39 523 158 544 469 300 674 56 469 77 158Z" fill="none" stroke="url(#gold)" stroke-width="3" opacity=".9"/>
+<path d="M300 67 499 175 517 455 300 642 83 455 101 175Z" fill="none" stroke="#dcb67d" stroke-width="1" opacity=".27"/>
+<path d="M300 101V7M300 668v75M67 350H12M588 350h-55" stroke="#e0b57a" stroke-width="3" opacity=".63"/>
+<g fill="#d8a76c" opacity=".65"><path d="m94 176 34 7-26 23z"/><path d="m506 176-34 7 26 23z"/><path d="m94 510 34-7-26-23z"/><path d="m506 510-34-7 26-23z"/></g>
+<path d="M201 179 153 210 92 345 147 376 190 316 189 526Q300 584 411 526L410 316 453 376 508 345 447 210 399 179 343 208 300 260 257 208Z" fill="url(#gi)" stroke="#c7a276" stroke-width="3"/>
+<path d="m201 180 99 91-61 109-74-176zm198 0-99 91 61 109 74-176z" fill="#2d2835" stroke="#7b6583" stroke-width="2"/>
+<path d="m255 204 45 69 45-69-45 31z" fill="#08090f" stroke="#c6a47b" stroke-width="2"/>
+<path d="m300 274-63 107 63 91 63-91z" fill="#101014" stroke="#4d3b54" stroke-width="2"/>
+<path d="M182 412h236v42H182z" fill="url(#purple)" stroke="#a981bc" stroke-width="3"/>
+<path d="M194 421h210" stroke="#caa2da" stroke-width="2" opacity=".62"/>
+<path d="m327 432 36 8-25 133-30-9z" fill="#56366e" stroke="#ab86c4" stroke-width="2"/>
+<path d="m282 431-26 11 39 124 29-10z" fill="#74488f" stroke="#ab86c4" stroke-width="2"/>
+<path d="M265 414h71v47h-71z" fill="#281d2f" stroke="#a981bc" stroke-width="3"/>
+<path d="M275 426h51" stroke="#eee5db" stroke-width="4"/>
+<path d="M275 439h51" stroke="#eee5db" stroke-width="4"/>
+<path d="M275 452h51" stroke="#eee5db" stroke-width="4"/>
+<path d="M163 527q137 67 274 0" stroke="url(#gold)" stroke-width="4" fill="none" opacity=".7"/>
+<path d="m272 328 28 17 28-17" fill="none" stroke="#b28c59" stroke-width="2"/>
+<text x="300" y="151" text-anchor="middle" font-family="Georgia,serif" font-size="54" font-weight="bold" fill="url(#gold)" letter-spacing="7">GC</text>
+<text x="300" y="628" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#eacba5" letter-spacing="5">BJJ • PURPLE BELT</text>
+<path d="M225 694h150" stroke="#dcb67d" stroke-width="2" opacity=".7"/>
+</svg>
