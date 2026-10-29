@@ -48,6 +48,18 @@ for (const page of pages) {
   const ids = [...html.matchAll(/\bid\s*=\s*(["'])([^"']+)\1/gi)].map(m => m[2]);
   const idSet = new Set(ids);
   if (idSet.size !== ids.length) fail(file, 'duplicate HTML id attributes');
+  // Resolve ARIA ID references just like in-page anchors. An aria-labelledby
+  // typo can silently strip the accessible name of an entire section.
+  for (const tag of html.matchAll(/<([a-z][a-z0-9-]*)\\b[^>]*>/gi)) {
+    for (const attr of ['aria-labelledby', 'aria-describedby', 'aria-controls']) {
+      const refs = attribute(tag[0], attr);
+      if (refs === null) continue;
+      if (!refs.trim()) { fail(file, `empty ${attr} reference`); continue; }
+      for (const ref of refs.trim().split(/\\s+/)) {
+        if (!idSet.has(ref)) fail(file, `broken ${attr} reference #${ref}`);
+      }
+    }
+  }
   for (const tag of [...tags(html, 'a'), ...tags(html, 'img'), ...tags(html, 'link')]) {
     const tagName = tag.match(/^<([a-z]+)/i)?.[1].toLowerCase();
     const target = attribute(tag, tagName === 'img' ? 'src' : 'href');
