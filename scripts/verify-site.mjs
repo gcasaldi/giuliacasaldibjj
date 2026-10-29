@@ -50,12 +50,12 @@ for (const page of pages) {
   if (idSet.size !== ids.length) fail(file, 'duplicate HTML id attributes');
   // Resolve ARIA ID references just like in-page anchors. An aria-labelledby
   // typo can silently strip the accessible name of an entire section.
-  for (const tag of html.matchAll(/<([a-z][a-z0-9-]*)\\b[^>]*>/gi)) {
+  for (const tag of html.matchAll(/<([a-z][a-z0-9-]*)\b[^>]*>/gi)) {
     for (const attr of ['aria-labelledby', 'aria-describedby', 'aria-controls']) {
       const refs = attribute(tag[0], attr);
       if (refs === null) continue;
       if (!refs.trim()) { fail(file, `empty ${attr} reference`); continue; }
-      for (const ref of refs.trim().split(/\\s+/)) {
+      for (const ref of refs.trim().split(/\s+/)) {
         if (!idSet.has(ref)) fail(file, `broken ${attr} reference #${ref}`);
       }
     }
