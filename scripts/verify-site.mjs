@@ -33,6 +33,10 @@ for (const page of pages) {
   if (!attribute(headMeta(html, 'name', 'description') || '', 'content')) fail(file, 'missing meta description');
   if (attribute(headLink(html, 'canonical') || '', 'href') !== canonical) fail(file, 'canonical does not match page URL');
   if (attribute(headMeta(html, 'property', 'og:url') || '', 'content') !== canonical) fail(file, 'og:url does not match canonical');
+  const expectedLocale = lang === 'it' ? 'it_IT' : 'en_US';
+  const alternateLocale = lang === 'it' ? 'en_US' : 'it_IT';
+  if (attribute(headMeta(html, 'property', 'og:locale') || '', 'content') !== expectedLocale) fail(file, 'og:locale does not match page language');
+  if (attribute(headMeta(html, 'property', 'og:locale:alternate') || '', 'content') !== alternateLocale) fail(file, 'missing other-language Open Graph locale');
   for (const [code, href] of [['it', base], ['en', base + 'en/'], ['x-default', base]]) {
     if (attribute(headLink(html, 'alternate', code) || '', 'href') !== href) fail(file, `missing or incorrect hreflang=${code}`);
   }
@@ -82,7 +86,11 @@ for (const page of pages) {
       const person = JSON.parse(json);
       if (person['@type'] !== 'Person' || person.name !== 'Giulia Casaldi') fail(file, 'unexpected JSON-LD athlete identity');
       if (!Array.isArray(person.sameAs) || !person.sameAs.every(url => /^https:\/\//.test(url))) fail(file, 'invalid sameAs URLs');
-      if (!person.sameAs?.includes('https://www.instagram.com/giuliacasaldijj/')) fail(file, 'JSON-LD missing official Instagram identity');
+      if (person['@id'] !== base + '#athlete') fail(file, 'JSON-LD must use one stable athlete identity across languages');
+      if (person.mainEntityOfPage !== canonical) fail(file, 'JSON-LD mainEntityOfPage does not match canonical');
+      if (person.sameAs?.length !== 1 || person.sameAs[0] !== 'https://www.instagram.com/giuliacasaldijj/') {
+        fail(file, 'sameAs must contain only the athlete-owned identity; competition result pages are citations, not identity profiles');
+      }
     } catch { fail(file, 'invalid JSON-LD syntax'); }
   }
 }
